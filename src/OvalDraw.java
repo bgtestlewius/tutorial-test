@@ -1,7 +1,7 @@
-// Author:	Bill Gillespie
-// Note:	Drawing oval in forest green(35,142,35)
-
-
+/***
+****	Author:	Bill Gillespie
+****	Note:	Drawing oval in forest green(35,142,35)
+***/
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -18,10 +18,11 @@ class Oval extends JPanel {
 		int panelWidth = getWidth();
 		int panelHeight = getHeight();
 		
+		//Set color to forest green
+		
 		g.setColor(new Color(35,142,35));
 		g.fillOval(0,0,panelWidth,panelHeight);
 		
-		//System.out.println("Paint Compoment");
 		
 		
 	}
@@ -31,20 +32,18 @@ public class OvalDraw {
 
 	public static void main(String[] args) {
 		
-
+		//using jFrame
 		JFrame myFrame = new JFrame();
 		myFrame.setBounds(200,200,400,800);
 		myFrame.setTitle("Draw");
 		myFrame.setVisible(true);
 		myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
+		//Build Oval
 		Oval myOval = new Oval();
 		Container contentPane = myFrame.getContentPane();
 		//System.out.print("test");
 		contentPane.add(myOval);
-		
-		
-		
 		
 	}
 
