@@ -51,22 +51,30 @@ class Oval extends JPanel {
 	}
 }
 
+class OvalFrame extends JFrame{
+	//create default constructor
+	OvalFrame(){
+		setBounds(200,200,400,800);
+		setTitle("Draw");
+		setVisible(true);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		//Build Oval
+		Oval myOval = new Oval(0,255,255);
+		Container contentPane = getContentPane();
+		//System.out.print("test");
+		contentPane.add(myOval);
+		
+	}
+}
 public class OvalDraw {
 
 	public static void main(String[] args) {
 		
 		//using jFrame
-		JFrame myFrame = new JFrame();
-		myFrame.setBounds(200,200,400,800);
-		myFrame.setTitle("Draw");
-		myFrame.setVisible(true);
-		myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		JFrame myFrame = new OvalFrame();
 		
-		//Build Oval
-		Oval myOval = new Oval(0,0,255);
-		Container contentPane = myFrame.getContentPane();
-		//System.out.print("test");
-		contentPane.add(myOval);
+		
 		
 	}
 
