@@ -12,6 +12,28 @@ import java.awt.Color;
 
 
 class Oval extends JPanel {
+	private Color myColor;
+	
+	//setter always return void
+	public void setColor(int red, int green, int blue){
+		myColor = new Color(red, green, blue);
+	}
+	
+	public Color getColor() {
+		return myColor;
+	}
+	
+	Oval() {
+		// Default constructor w no parameters 
+		// set color to red
+		
+		myColor = new Color(255, 0, 0);
+	}
+	
+	Oval(int red, int green, int blue) {
+		setColor(red, green, blue);
+	}
+	
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		//System.out.println("Paint Compoment");
@@ -20,7 +42,8 @@ class Oval extends JPanel {
 		
 		//Set color to forest green
 		
-		g.setColor(new Color(35,142,35));
+		//g.setColor(new Color(35,142,35));
+		g.setColor(myColor);
 		g.fillOval(0,0,panelWidth,panelHeight);
 		
 		
@@ -40,7 +63,7 @@ public class OvalDraw {
 		myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		//Build Oval
-		Oval myOval = new Oval();
+		Oval myOval = new Oval(0,0,255);
 		Container contentPane = myFrame.getContentPane();
 		//System.out.print("test");
 		contentPane.add(myOval);
